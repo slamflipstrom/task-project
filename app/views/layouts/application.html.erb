@@ -8,13 +8,25 @@
 </head>
 <body>
   
-  <% if current_user %>
-    <%= current_user.email %> (<%= link_to "Log out!", logout_path %>)
-  <% else %>
-    <%= link_to("Log In", login_path) %>
-  <% end %>
+  <div id="login">  
+    <% if current_user %>
+      <%= current_user.email %> (<%= link_to "Log out!", logout_path %>)
+    <% else %>
+      <%= link_to("Log In", login_path) %>
+    <% end %>
+  </div>
+  
+  <header>
+    HEADER
+  </header>
 
-<%= yield %>
+  <div id="main">
+    <%= yield %>            
+  </div>
+  
+  <footer>
+    FOOTER
+  </footer>
 
 </body>
 </html>
