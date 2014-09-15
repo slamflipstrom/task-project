@@ -2,8 +2,10 @@
 
 <% @tasks.each do |t| %>
 
-  <h3><%= link_to(t.title, task_path) %></h3>
+  <h3><%= link_to(t.title, task_path(t.id)) %></h3>
   <p>Description: <%= t.description %></p>
   <p>Task Done: <%= t.done %></p>
 
 <% end %>
+
+<%= link_to("New Task", new_task_path) %>
