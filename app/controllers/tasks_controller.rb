@@ -37,6 +37,8 @@ class TasksController < ApplicationController
   end
   
   def destroy
+    session[:user_id]=nil     # or reset_session to clear entire session
+    redirect_to tasks_path
   end
   
 end
