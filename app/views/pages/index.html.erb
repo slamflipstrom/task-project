@@ -1,2 +1,6 @@
 <h1>TaskMate</h1>
 
+ <% if current_user %>
+ <%= link_to "View Tasks", tasks_path %>
+ <% else %>
+ <% end %>
