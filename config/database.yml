@@ -43,13 +43,9 @@ test:
   encoding: unicode
   database: TaskProject_test
   pool: 5
-  username: TaskProject
-  password:
 
 production:
   adapter: postgresql
   encoding: unicode
   database: TaskProject_production
   pool: 5
-  username: TaskProject
-  password:
