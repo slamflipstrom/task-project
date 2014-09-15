@@ -12,6 +12,7 @@
   </p>
   <p>
     <%= f.hidden_field :done, :value => "false" %>
+    <%= f.hidden_field :user_id, :value => session[:user_id] %>
   </p>
 
   <%= f.submit %>

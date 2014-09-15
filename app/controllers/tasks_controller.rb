@@ -1,7 +1,9 @@
 class TasksController < ApplicationController
   
   def index
-    @tasks=Task.all
+    # @tasks=Task.all
+    
+    @tasks=Task.where({:user_id => session[:user_id]})
   end
   
   def show
