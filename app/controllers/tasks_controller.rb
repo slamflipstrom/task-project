@@ -30,13 +30,15 @@ class TasksController < ApplicationController
     @task=Task.find(params[:id])
     
     if @task.update_attributes(params[:task])
-      redirect_to article_path(@task.id)
+      redirect_to task_path(@task.id)
     else
       render "edit"
     end
   end
   
   def destroy
+    session[:user_id]=nil     # or reset_session to clear entire session
+    redirect_to tasks_path
   end
   
 end
