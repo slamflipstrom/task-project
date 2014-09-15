@@ -1,4 +1,5 @@
 class LoginsController < ApplicationController
+  skip_before_filter :authorize, :only => [:new, :create]
   
   def create
     user = User.find_by_email(params[:email])
