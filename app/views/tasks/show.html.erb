@@ -3,3 +3,5 @@
 <p>Description: <%= @task.description %></p>
 
 <p>Done Status: <%= @task.done %></p>
+
+<p><%= link_to("Delete Task", task_path(@task.id), :method => "delete") %></p>
