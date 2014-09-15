@@ -11,8 +11,7 @@
     <%= f.text_area :description %>
   </p>
   <p>
-    <%= f.label :done %>
-    <%= f.check_box :done %>
+    <%= f.hidden_field :done, :value => "false" %>
   </p>
 
   <%= f.submit %>
