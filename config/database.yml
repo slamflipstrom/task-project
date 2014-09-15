@@ -47,4 +47,3 @@ production:
   encoding: unicode
   database: TaskProject_production
   pool: 5
-
