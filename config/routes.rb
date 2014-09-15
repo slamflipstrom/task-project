@@ -1,5 +1,7 @@
 TaskProject::Application.routes.draw do  
   
+  root :to => 'pages#index'
+  
   get "/logout" => 'logins#destroy', :as => "logout"
   
   get "/login" => 'logins#new', :as => "login"
