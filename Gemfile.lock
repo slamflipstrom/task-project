@@ -122,7 +122,10 @@ DEPENDENCIES
   bcrypt-ruby (~> 3.0.0)
   jquery-rails
   pg
+<<<<<<< HEAD
   pony
+=======
+>>>>>>> c8d600f7c2d3d6f1096da4b6f08a7db82aa46e3d
   pry-rails
   rails (= 3.2.19)
   rspec-rails (~> 3.0.0)

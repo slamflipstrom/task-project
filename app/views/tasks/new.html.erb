@@ -1,7 +1,7 @@
 
-<body id="task_body">
+<body class="task_body">
 	
-<div id="task">
+<div class="task">
 	<h1>New Task</h1>
 	<hr>
 
@@ -20,7 +20,7 @@
     <%= f.hidden_field :user_id, :value => session[:user_id] %>
   </p>
   
-  <% @categories.each do |c| %>
+  <% @user.categories.each do |c| %>
   
     <%= f.radio_button :category_id, c.id %>
     <%= f.label :category_id, c.name %><br />

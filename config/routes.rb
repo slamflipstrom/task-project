@@ -5,6 +5,8 @@ TaskProject::Application.routes.draw do
   resources :tasks
   
   resources :categories
+  
+  resources :projects
 
   get "/logout" => 'logins#destroy', :as => "logout"
   

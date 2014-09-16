@@ -1,10 +1,10 @@
 
 /* #883116 red*/
-/* #F7E8A7 yellow*/
+/*#F7E8A7 :yellow*/
 /* #717051 green*/
 /* #3A4D4B blue*/
 /*#2A2016  black*/
-body#task_body {
+body.task_body {
 	background-color:#F7E8A7;
 }
 
@@ -27,7 +27,7 @@ hr{
 }
 
 
-#task {
+.task {
 	
 	margin:  0px auto;
 	width:300px;
@@ -82,6 +82,67 @@ form {
 	
 }
 
+/*task index*/
+#index_body{
+	background-color:#2A2016 ;
+}
+
+
+
+#t_index{
+	width:500px;
+	margin:0 auto;
+	padding:20px;
+	background-color:#F7E8A7;
+}
+#t_title{color:#883116;}
+#t_name,
+#t_content,
+#n_new,
+#s_title,
+#s_content{
+	color: #3A4D4B;
+}
+#t_name{
+	display: inline-block;
+	text-decoration: none;
+	border-bottom: 2px solid #883116;
+	font-size: 20px;
+}
+
+#n_new{
+	display:inline-block;
+	text-decoration: none;
+	background-color: #883116;
+	padding: 10px;
+	margin-bottom: 31px;
+	color: #F7E8A7;
+}
+#n_new:hover{
+	background-color: #EB5627;
+	
+}
+ul#s_links li {
+	display:inline;
+	text-decoration: none;
+	padding:10px;
+	
+}
+ul#s_links{
+	margin-top: -24px;
+}
+#s_links li a {
+	text-decoration:none;
+	background-color:#3A4D4B;
+	padding:10px;
+	color:#F7E8A7;
+}
+#s_links li a:hover{
+	background-color:#769E9B;
+}
+
+
+/*show page*/
 
 
 
