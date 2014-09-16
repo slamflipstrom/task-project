@@ -1,10 +1,13 @@
 class ProjectsController < ApplicationController
   
-  #skip_before_filter :authorize, :only => [:create, :new]
+  skip_before_filter :authorize, :only => [:index, :show]
   
   def index
-    @projects=Project.where({:user_id => session[:user_id]})
-    @name=User.find(params[:user_id]) 
+    @projects=Project.all
+    # Was originally ^ ".where({:user_id => session[:user_id]})"
+    
+    #TODO: Needs to be added once join table has been established
+    # @current_user=User.find(session[:user_id])
   end
   
   def show

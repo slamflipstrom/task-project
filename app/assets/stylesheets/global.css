@@ -25,12 +25,12 @@ h5{
 	border: 2px solid white;
 }
 ::-webkit-input-placeholder {
-   color: #717051;/* yellow*/
+   color: #8C8B64;/* yellow*/
    font-size: 15px;
 }
 #form input#submit {
 	color:#F7E8A7;
-	background-color:#3A4D4B;
+	background-color:#92C3BF;
 	border-radius: 2px;
 	border: 1px solid #3A4D4B;
 	font-size: 15px;
@@ -68,6 +68,6 @@ p {
 }
 
 #form a:hover{
-	background-color: #2A2016;
+	background-color: #86BC6D;
 	
 }

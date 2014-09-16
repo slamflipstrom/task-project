@@ -1,12 +1,11 @@
-<h1><%= @name %>'s Projects</h1>
+<h1>Projects</h1>
 
 <p>Session user id: <%= session[:user_id] %></p>
 
 <% @projects.each do |p| %>
 
-  <h4><%= link_to(p.title, task_path(p.id)) %></h4>
+  <h4><%= link_to(p.name, project_path(p.id)) %></h4>
   <p>Description: <%= p.description %></p>
-  <p>Project Done: <%= p.done %></p>
 
 <% end %>
 
