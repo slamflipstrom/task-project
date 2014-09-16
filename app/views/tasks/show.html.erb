@@ -3,7 +3,11 @@
 	<h1 id ="s_title">Details page for <%= @task.title %></h1>
 	<hr>
 
+<% if @task.category %>
 <p>Category: <%= @task.category.name %></p>
+<% else %>
+<p>Category: None</p>
+<% end %>
 
 <p id="s_content">Description: <%= @task.description %></p>
 
