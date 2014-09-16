@@ -1,4 +1,4 @@
-<h1>Projects</h1>
+<h1><%= @current_user.name %>'s Projects</h1>
 
 <p>Session user id: <%= session[:user_id] %></p>
 
@@ -9,4 +9,6 @@
 
 <% end %>
 
-<%= link_to("New Project", new_project_path) %>
+
+
+<h3><%= link_to("New Project", new_project_path) %></h3>
