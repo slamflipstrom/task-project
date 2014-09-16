@@ -1,6 +1,16 @@
 body {
   background: #2A2016;
 }
+
+h5{
+	color:#3A4D4B;
+	font-size: 40px;
+	margin-bottom: 15px;
+	margin-top: 25px;
+	font-family: 'Merriweather Sans', sans-serif;
+}	
+
+
 #form {
 	background-color:#F7E8A7;
 	margin: 0 auto;
@@ -25,6 +35,4 @@ body {
 	font-size: 15px;
 	padding: 6px 107px;
 	text-align: center;
-	
-	
 }
