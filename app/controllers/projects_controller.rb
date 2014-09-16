@@ -4,6 +4,7 @@ class ProjectsController < ApplicationController
   
   def index
     @projects=Project.where({:user_id => session[:user_id]})
+    @name=User.find(params[:user_id]) 
   end
   
   def show
