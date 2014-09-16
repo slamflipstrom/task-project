@@ -1,7 +1,8 @@
-body {
-  background: #2A2016;
-}
 
+header{
+	
+	display:none;
+}
 h5{
 	color:#3A4D4B;
 	font-size: 40px;
@@ -13,21 +14,22 @@ h5{
 
 #form {
 	background-color:#F7E8A7;
-	margin: 0 auto;
+	margin: 100px auto 0px auto;
 	width: 261px;
-	padding: 20px;
+	padding: 30px;
 }
 #form input[type]{
 	padding-bottom: 10px;
 	font-size: 20px;
 	margin-bottom:15px;
 	border-radius: 2px;
+	border: 2px solid white;
 }
 ::-webkit-input-placeholder {
-   color: #717051;
+   color: #717051;/* yellow*/
    font-size: 15px;
 }
-#form input#submit{
+#form input#submit {
 	color:#F7E8A7;
 	background-color:#3A4D4B;
 	border-radius: 2px;
@@ -35,4 +37,38 @@ h5{
 	font-size: 15px;
 	padding: 6px 107px;
 	text-align: center;
+	
+}
+
+#form input#submit:hover{
+	cursor:pointer;
+	/*color:#883116;*/ /* red*/
+	background-color: #2A2016;
+	color:#F7E8A7;
+	
+}
+
+#form a {
+	display:inline-block;
+	text-decoration:none;
+	background-color:white;
+	padding: 7px 57px;
+	background-color: #3A4D4B;
+	color:#F7E8A7;
+	border-radius: 2px;
+	font-size: 15px;
+	font-family: Arial;
+	
+}
+
+p {
+	margin-bottom: 5px;
+	color:#883116;
+	font-family: Arial;
+	font-size: 14px;
+}
+
+#form a:hover{
+	background-color: #2A2016;
+	
 }
