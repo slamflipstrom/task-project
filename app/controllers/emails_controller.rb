@@ -5,13 +5,13 @@ class EmailsController < ApplicationController
     
   end
   
-  def new
-    
-    
+  def new  
     
   end
   
   def create 
+    
+    binding.pry
     
     Pony.mail({
       :to => 'heathered@gmail.com',
