@@ -16,4 +16,7 @@ TaskProject::Application.routes.draw do
   post "/create_user" => 'users#create', :as => "create_user"
   get "/signup" => 'users#new', :as => "signup"
   
+  post '/email' => 'emails#create', :as => 'contact'
+  get '/email' => 'emails#new', :as => 'email'
+  
 end
