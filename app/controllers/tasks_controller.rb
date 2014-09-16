@@ -26,6 +26,7 @@ class TasksController < ApplicationController
   end
   
   def edit
+    @categories=Category.all
     @task=Task.find(params[:id])
   end
   
