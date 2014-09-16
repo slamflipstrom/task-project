@@ -1,5 +1,7 @@
 <h1>All Tasks</h1>
 
+<%= session[:user_id] %>
+
 <% @tasks.each do |t| %>
 
   <h3><%= link_to(t.title, task_path(t.id)) %></h3>
