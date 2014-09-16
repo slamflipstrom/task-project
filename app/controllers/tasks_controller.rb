@@ -11,6 +11,7 @@ class TasksController < ApplicationController
   end
   
   def new
+    @user=User.find(session[:user_id])
     @task=Task.new
     @categories=Category.all
   end
