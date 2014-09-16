@@ -1,7 +1,10 @@
 <%= form_for :email do |f| %>
   
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+  
   <%= f.label :body %>
-  <%= f.text_field :body %>
+  <%= f.text_area :body, :id => "derp" %>
   
   <%= f.submit %>
 <% end %>

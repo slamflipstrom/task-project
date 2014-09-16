@@ -6,9 +6,8 @@ class EmailsController < ApplicationController
   
   def create 
     
-    Pony.mail({
-      :to => 'heathered@gmail.com',
-      :from => 'taskmate.ocs@gmail.com',
+    Pony.options = {
+      :to => params[:email][:email],
       :body => params[:email][:body],
       :via => :smtp,
       :via_options => {
@@ -20,8 +19,11 @@ class EmailsController < ApplicationController
         :authentication       => :plain, # :plain, :login, :cram_md5, no auth by default
         :domain               => "localhost.localdomain" # the HELO domain provided by the client to the server
       }
-    })
+    }
     
+    Pony.mail(:from => 'taskmate.ocs@gmail.com')
+    
+    redirect_to root_path, :alert => "Your email has been sent."
   end
   
   
