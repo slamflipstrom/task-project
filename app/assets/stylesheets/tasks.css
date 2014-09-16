@@ -1,6 +1,6 @@
 
 /* #883116 red*/
-/* #F7E8A7 yellow*/
+/* :yellow*/
 /* #717051 green*/
 /* #3A4D4B blue*/
 /*#2A2016  black*/
@@ -82,6 +82,31 @@ form {
 	
 }
 
+/*task index*/
+#index_body{
+	background-color:#2A2016 ;
+}
+
+
+
+#t_index{
+	width:500px;
+	margin:0 auto;
+	padding:20px;
+	background-color:#F7E8A7;
+}
+#t_title{color:#883116;}
+#t_name,
+#t_content,
+#n_new{
+	color: #3A4D4B;
+}
+#t_name{
+	display: inline-block;
+	text-decoration: none;
+	border-bottom: 2px solid #883116;
+	font-size: 20px;
+}
 
 
 
