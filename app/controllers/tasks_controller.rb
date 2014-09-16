@@ -12,6 +12,7 @@ class TasksController < ApplicationController
   
   def new
     @task=Task.new
+    @categories=Category.all
   end
   
   def create

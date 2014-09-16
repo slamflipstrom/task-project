@@ -4,4 +4,8 @@
 
 <p>Done Status: <%= @task.done %></p>
 
+<p><%= link_to("Edit Task", edit_task_path(@task.id)) %></p>
+
 <p><%= link_to("Delete Task", task_path(@task.id), :method => "delete") %></p>
+
+<p><%= link_to("All Tasks", tasks_path) %></p>
