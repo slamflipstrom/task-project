@@ -3,6 +3,77 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
-	body {
+body#t_body {
   background-color: #2A2016;
+}
+
+
+h5{
+	color:#3A4D4B;
+	font-size: 40px;
+	margin-bottom: 15px;
+	margin-top: 25px;
+	font-family: 'Merriweather Sans', sans-serif;
+}	
+
+
+#form {
+	background-color:#F7E8A7;
+	margin:  0 auto;
+	width: 261px;
+	padding: 30px;
+}
+#form input[type]{
+	padding-bottom: 10px;
+	font-size: 20px;
+	margin-bottom:15px;
+	border-radius: 2px;
+	border: 2px solid white;
+}
+::-webkit-input-placeholder {
+   color: #717051;/* yellow*/
+   font-size: 15px;
+}
+#form input#submit {
+	color:#F7E8A7;
+	background-color:#3A4D4B;
+	border-radius: 2px;
+	border: 1px solid #3A4D4B;
+	font-size: 15px;
+	padding: 6px 107px;
+	text-align: center;
+	
+}
+
+#form input#submit:hover{
+	cursor:pointer;
+	/*color:#883116;*/ /* red*/
+	background-color: #2A2016;
+	color:#F7E8A7;
+	
+}
+
+#form a {
+	display:inline-block;
+	text-decoration:none;
+	background-color:white;
+	padding: 7px 57px;
+	background-color: #3A4D4B;
+	color:#F7E8A7;
+	border-radius: 2px;
+	font-size: 15px;
+	font-family: Arial;
+	
+}
+
+p#n_user {
+	margin-bottom: 5px;
+	color:#883116;
+	font-family: Arial;
+	font-size: 14px;
+}
+
+#form a:hover{
+	background-color: #2A2016;
+	
 }
