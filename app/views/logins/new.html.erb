@@ -1,15 +1,24 @@
-<h1>Log In</h1>
 
-<%= form_tag create_login_path do %>
+
+
+
+
+<div id = "form">
+	<h5>TaskMate</h5>
+	<%= form_tag create_login_path do %>
   <div class="field">
-    <%= label_tag :email %><br />
-    <%= text_field_tag :email, params[:email] %>
+   
+    <%= text_field_tag :email, params[:email], :placeholder => "Email" %>
   </div>
   
   <div class="field">
-    <%= label_tag :password %><br />
-    <%= password_field_tag :password %>
+    
+    <%= password_field_tag :password, params[:password], :placeholder =>"Password" %>
   </div>
   
-  <%= submit_tag "Log In" %>
+  <%= submit_tag "Login", :id => "submit" %>
 <% end %>
+
+<p>Are you a new user?</p>
+<%=link_to("Create a new account", signup_path) %>
+</div>
