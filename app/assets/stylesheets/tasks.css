@@ -4,7 +4,7 @@
 /* #717051 green*/
 /* #3A4D4B blue*/
 /*#2A2016  black*/
-body#task_body {
+body.task_body {
 	background-color:#F7E8A7;
 }
 
@@ -27,7 +27,7 @@ hr{
 }
 
 
-#task {
+.task {
 	
 	margin:  0px auto;
 	width:300px;
