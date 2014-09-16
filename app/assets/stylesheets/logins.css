@@ -3,13 +3,11 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
-	body {
+body#t_body {
   background-color: #2A2016;
 }
-header{
-	
-	display:none;
-}
+
+
 h5{
 	color:#3A4D4B;
 	font-size: 40px;
@@ -21,7 +19,7 @@ h5{
 
 #form {
 	background-color:#F7E8A7;
-	margin: 100px auto 0px auto;
+	margin:  0 auto;
 	width: 261px;
 	padding: 30px;
 }
@@ -68,7 +66,7 @@ h5{
 	
 }
 
-p {
+p#n_user {
 	margin-bottom: 5px;
 	color:#883116;
 	font-family: Arial;

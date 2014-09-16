@@ -4,13 +4,11 @@
 /* #717051 green*/
 /* #3A4D4B blue*/
 /*#2A2016  black*/
-
-body{
+body#task_body {
 	background-color:#F7E8A7;
 }
-header{
-	
-}
+
+
 
 
 h1, p {
@@ -31,7 +29,7 @@ hr{
 
 #task {
 	
-	margin:0 auto;
+	margin:  0px auto;
 	width:300px;
 	padding: 40px 84px;
 	border-radius: 15px;
@@ -83,9 +81,7 @@ form {
 	
 	
 }
-::-webkit-input-placeholder {
-  padding:40px;
-}
+
 
 
 
