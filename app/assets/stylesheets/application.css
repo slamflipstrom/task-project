@@ -11,9 +11,7 @@
  *= require_self
  *= require_tree .
  */
-body{
-	background-color: white;
-}
+
 header{
 	width:700px;
 	margin: 0 auto;

@@ -1,4 +1,96 @@
-/*
-  Place all the styles related to the matching controller here.
-  They will automatically be included in application.css.
-*/
+
+/* #883116 red*/
+/* #F7E8A7 yellow*/
+/* #717051 green*/
+/* #3A4D4B blue*/
+/*#2A2016  black*/
+
+body{
+	background-color:#F7E8A7;
+}
+header{
+	
+}
+
+
+h1, p {
+	font-family: 'Merriweather Sans', sans-serif;
+	color:#F7E8A7;
+	
+}
+h1{
+	font-size: 20px;
+	padding-bottom: 14px;
+}
+hr{
+	margin-top: -29px;
+	border: 1px solid #3A4D4B;
+	
+}
+
+
+#task {
+	
+	margin:0 auto;
+	width:300px;
+	padding: 40px 84px;
+	border-radius: 15px;
+	
+	background-color: #717051;
+	
+}
+
+
+form {
+	margin:0 auto;
+}
+
+
+#task input[type],textarea{
+	width: 100%;
+	padding:10px;
+	border-radius:2px;
+	border: 2px solid white;
+	background-color:#EDE7C8;
+	border-left: 2px solid #3A4D4B;
+	border-top: 2px solid #3A4D4B;
+	border-right: 0px;
+	border-bottom: 0px;
+	font-size:14px;
+	
+}
+ #task_description{
+	height: 45px;
+	text-align:top;
+}
+
+
+#task input[type="submit"]{
+	background-color: #883116;
+	border: 2px solid #883116;
+	color:#F7E8A7;
+	width:50%;
+	font-size: 16px;
+}
+
+#task input[type="submit"]:hover{
+	cursor:pointer;
+	background-color: #3A4D4B;
+	border-bottom: 2px  solid #F7E8A7 ;
+	border-top: 2px solid #F7E8A7 ;
+	border-right: 0px;
+	border-left:0px;
+	
+	
+}
+::-webkit-input-placeholder {
+  padding:40px;
+}
+
+
+
+
+
+
+
+
