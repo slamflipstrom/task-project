@@ -1,22 +1,15 @@
 class EmailsController < ApplicationController
   
-  
-  def index
-    
-  end
-  
+
   def new  
-    
   end
   
   def create 
     
-    binding.pry
-    
     Pony.mail({
       :to => 'heathered@gmail.com',
       :from => 'taskmate.ocs@gmail.com',
-      :body => 'Derp',
+      :body => params[:email][:body],
       :via => :smtp,
       :via_options => {
         :address              => 'smtp.gmail.com',

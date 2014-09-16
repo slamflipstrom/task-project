@@ -6,8 +6,6 @@ gem 'rails', '3.2.19'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
-gem 'pony'
-gem 'pry-rails'
 
 
 # Gems used only for assets and not required
@@ -38,6 +36,8 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use debugger
 # gem 'debugger'
+
+gem 'pry-rails', :group => :development
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
