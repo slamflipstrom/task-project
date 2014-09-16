@@ -1,0 +1,11 @@
+<h1>Tasks for <%= @category.name %></h1>
+
+<% @category.tasks.each do |t| %>
+
+  <p>
+    <%= link_to(t.title, task_path(t.id)) %>
+  </p>
+  
+<% end %>
+
+<p><%= link_to("All categories", categories_path) %></p>

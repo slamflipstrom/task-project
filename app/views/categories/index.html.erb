@@ -1,0 +1,11 @@
+<h1>Project Categories</h1>
+
+<%= session[:user_id] %>
+
+<% @categories.each do |c| %>
+
+  <h3><%= link_to(c.name, category_path(c.id)) %></h3>
+
+<% end %>
+
+<p><%= link_to("New Category", new_category_path) %></p>
