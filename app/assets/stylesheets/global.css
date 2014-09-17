@@ -1,8 +1,19 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 /* #883116 red*/
 /* #F7E8A7 yellow*/
 /* #717051 green*/
 /* #3A4D4B blue*/
 /*#2A2016  black*/
+
+body {
+	background-color:#2A2016 ;
+}
 
 #alert {
   color: green;
@@ -12,7 +23,45 @@
   color: red;
 }
 
-header
+h1 {
+	font-family: 'Merriweather Sans', sans-serif;
+	color:#F7E8A7;
+	font-size: 20px;
+	padding-bottom: 14px;
+}
+
+p {
+  font-family: sans-serif;
+  color: black;
+}
+
+form {
+	margin:0 auto;
+}
+
+nav ul {
+  position: absolute;
+  right: 10px;
+}
+
+nav li {
+  list-style: none;
+  float: left;
+  padding: 10px;
+  margin-left: 2px;
+  background-color: #B4B4B4;
+}
+
+nav a {
+  color: ;
+}
+
+#preheader {
+	width:700px;
+	margin: 0 auto;
+	padding:30px;
+	text-align:center;
+}
 
 ul #sortable {
   padding: 0;

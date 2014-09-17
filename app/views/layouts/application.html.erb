@@ -19,20 +19,26 @@ body{
 </script>
 <body>
   
-  <ul>
-    <li><%= link_to("Projects", projects_path) %></li>
-    <li><%= link_to("Tasks", tasks_path) %></li>
-    <li><%= link_to("Home", root_path) %></li>
-  </ul>
+  <nav>
+    <ul>
+      <li><%= link_to("Projects", projects_path) %></li>
+      <li><%= link_to("Tasks", tasks_path) %></li>
+      <li><%= link_to("Home", root_path) %></li>
+    </ul>
+  </nav>
   
-  <header>
-	  <div id="login">  
+	<div id="preheader">
+    <div id="login">  
 	    <% if current_user %>
 	      <%= current_user.email %> (<%= link_to "Log out!", logout_path %>)
 	    <% else %>
 	      <%= link_to("Log In", login_path) %> | <%=link_to("Signup for a new account", signup_path) %>
 	    <% end %>
 	  </div>
+  </div>
+  
+  <header>
+    <h1>TaskMate</h1>
   </header>
 
   <div id="main">
