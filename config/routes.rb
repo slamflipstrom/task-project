@@ -8,6 +8,8 @@ TaskProject::Application.routes.draw do
   
   post 'tasks/sort' => 'tasks#sort', :as => 'sort_tasks'
   
+  post 'tasks/assign' => 'tasks#assign', :as => 'assign_task'
+  
   resources :categories
   
   resources :projects

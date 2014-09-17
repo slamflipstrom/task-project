@@ -11,7 +11,7 @@ class TasksController < ApplicationController
     @users=User.all
     @categories=Category.all
     @task=Task.find_by_url(params[:id])
-    @assignee=User.find(@task.user_id).name
+    @assignee=User.find(@task.user_id)
   end
   
   def new
@@ -43,6 +43,36 @@ class TasksController < ApplicationController
       redirect_to task_path(@task.url)
     else
       render "edit"
+    end
+  end
+  
+  def assign
+    @task=Task.find_by_url(params[:task][:task_id])
+    @user = User.find(session[:user_id])
+    
+    user_id = params[:task][:user_id].to_i
+    
+    if @task.update_attributes(:user_id => user_id)
+      Pony.options = {
+        :to => @task.user.email,
+        :body => 'You have been assigned to a task.',
+        :via => :smtp,
+        :via_options => {
+          :address              => 'smtp.gmail.com',
+          :port                 => '587',
+          :enable_starttls_auto => true,
+          :user_name            => 'taskmate.ocs@gmail.com',
+          :password             => 'derpderpderp',
+          :authentication       => :plain, # :plain, :login, :cram_md5, no auth by default
+          :domain               => "localhost.localdomain" # the HELO domain provided by the client to the server
+        }
+      }
+
+      Pony.mail(:from => 'taskmate.ocs@gmail.com')
+      
+      redirect_to task_path(@task.url), :notice => "You have notified #{@task.user.name} of their new task."
+    else
+      render "edit", :alert => "Oh, no, something went wrong!"
     end
   end
   

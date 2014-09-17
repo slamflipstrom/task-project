@@ -52,6 +52,7 @@ form {
 
 #t_index {
   position: relative;
+  min-height: 200px;
 }
 
 nav ul {
@@ -130,4 +131,10 @@ ul #sortable {
   padding-bottom: 15px;
   margin: 10px;
   cursor: move;
+}
+
+#login_form {
+  position: relative;
+  min-height: 150px;
+  top: 30px;
 }

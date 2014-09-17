@@ -1,7 +1,5 @@
 class ProjectsController < ApplicationController
   
-  skip_before_filter :authorize, :only => [:index, :show]
-  
   def index
     @current_user=User.find(session[:user_id])
     @projects = @current_user.projects
