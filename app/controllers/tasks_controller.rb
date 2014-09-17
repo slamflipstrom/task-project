@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
   
+  
   def index
     # @tasks=Task.all
     
@@ -7,7 +8,10 @@ class TasksController < ApplicationController
   end
   
   def show
-    @task=Task.find(params[:id])
+    @users=User.all
+    @categories=Category.all
+    @assignee=User.find(@task.user_id).name
+    @task=Task.find_by_url(params[:id])
   end
   
   def new
@@ -29,7 +33,7 @@ class TasksController < ApplicationController
   def edit
     @user=User.find(session[:user_id])
     @categories=Category.all
-    @task=Task.find(params[:id])
+    @task=Task.find_by_url(params[:id])
   end
   
   def update

@@ -7,15 +7,25 @@
   <p id="s_content">Category: None</p>
 <% end %>
 
+  <%= link_to("Choose a task category: ", new_category_path) %><br />
+  
+  <p id="s_content">This task is currently assigned to <%= @assignee %></p>
+  
+  <%= form_for @task do |f| %>
+    
+    <%= f.collection_select(:user_id, @users, :id, :name, :include_blank => "Please select an assignee") %>
+    
+    <%= f.submit "Assign Task"%>
+    
+  <% end %>
+  
 <p id="s_content">Description: <%= @task.description %></p>
 
 <% if @task.done %>
 <p id="s_status">This task has been completed.</p>
 <% end %>
 
-
-<ul id ="s_links">
-	<li><%= link_to("Edit Task", edit_task_path(@task.id)) %></li>
-	<li><%= link_to("Delete Task", task_path(@task.id), :method => "delete") %></li>
-	<li><%= link_to("All Tasks", tasks_path) %></li>
+	<ul id ="s_links">
+	<li><%= link_to("Edit Task", edit_task_path(@task.url)) %></li>
+	<li><%= link_to("Delete Task", task_path(@task.url), :method => "delete") %></li>
 </ul>
