@@ -16,10 +16,10 @@ ul #sortable {
   padding: 0;
   margin: 0;
   background: white;
-  list-style: none;
 }
 
 #sortable li {
+  list-style: none;
   padding: 10px;
   margin: 0px;
   background: #B4B4B4;
