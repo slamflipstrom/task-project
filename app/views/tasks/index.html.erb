@@ -1,15 +1,13 @@
-<div id ="t_index">
-	<h1 id="t_title">All Tasks</h1>
-	<hr>
+<h1 id="t_title">All Tasks</h1>
+<hr>
 
-  <p>Session user id: <%= session[:user_id] %></p>
+<p>Session user id: <%= session[:user_id] %></p>
 
-  <% @tasks.each do |t| %>
+<% @tasks.each do |t| %>
 
-    <p><%= link_to(t.title, task_path(t.id), :id=>"t_name") %></p>
-    <p id="t_content"> <%= t.description %></p>
+  <p><%= link_to(t.title, task_path(t.id), :id=>"t_name") %></p>
+  <p id="t_content"> <%= t.description %></p>
 
-  <% end %>
+<% end %>
 
-  <%= link_to("New Task", new_task_path, :id=>"n_new") %>
-</div>
+<%= link_to("New Task", new_task_path, :id=>"n_new") %>
