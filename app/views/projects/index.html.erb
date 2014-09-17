@@ -1,6 +1,4 @@
-<h1><%= @current_user.name %>'s Projects</h1>
-
-<p>Session user id: <%= session[:user_id] %></p>
+<h1>Your Projects</h1>
 
 <% @projects.each do |p| %>
 
@@ -8,7 +6,5 @@
   <p>Description: <%= p.description %></p>
 
 <% end %>
-
-
 
 <h3><%= link_to("New Project", new_project_path) %></h3>
