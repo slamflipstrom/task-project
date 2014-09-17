@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
   
+  
   def index
     # @tasks=Task.all
     
@@ -7,7 +8,9 @@ class TasksController < ApplicationController
   end
   
   def show
-    @task=Task.find(params[:id])
+    binding.pry
+  @task=Task.find_by_url(params[:id])
+  
   end
   
   def new

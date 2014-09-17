@@ -3,5 +3,21 @@ class Task < ActiveRecord::Base
   belongs_to :category
   belongs_to :project
   
+  acts_as_url :title
+  
   validates :title, :presence => true
+  
+  
+  
+  
+
+ 
+  
+  
+  def to_param
+ url
+  end
+  
 end
+
+
