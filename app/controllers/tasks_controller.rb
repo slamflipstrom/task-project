@@ -52,4 +52,11 @@ class TasksController < ApplicationController
     redirect_to tasks_path
   end
   
+  def sort
+    params[:task].each_with_index do |id, index|
+      Task.update_all(['position=?', index+1], ['id=?', id])
+    end
+    render :nothing => true
+  end
+  
 end

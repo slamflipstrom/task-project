@@ -12,3 +12,22 @@
   color: red;
 }
 
+header
+
+ul #sortable {
+  padding: 0;
+  margin: 0;
+  background: white;
+}
+
+#sortable li {
+  list-style: none;
+  padding: 10px;
+  margin: 0px;
+  background: #B4B4B4;
+}
+
+#sortable .handle {
+  margin: 10px;
+  cursor: move;
+}
