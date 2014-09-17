@@ -9,9 +9,6 @@ class TasksController < ApplicationController
   def show
     @users=User.all
     @categories=Category.all
-    @user_names=[]
-    @users.each { |u| @user_names << u.name }
-    binding.pry
     @task=Task.find(params[:id])
     @assignee=User.find(@task.user_id).name
   end
