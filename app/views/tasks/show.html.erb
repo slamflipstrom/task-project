@@ -13,6 +13,21 @@
 
 <p id="s_status">Done Status: <%= @task.done %></p>
 
+<%= form_for @comment do |f| %>
+
+  <p>
+    <%= f.hidden_field :name, value: @current_user.name %>
+  </p>
+  <p>
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+  </p>
+
+  <%= f.submit %>
+
+<% end %>
+
+
 	<ul id ="s_links">
 	<li><%= link_to("Edit Task", edit_task_path(@task.id)) %></li>
 
