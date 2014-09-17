@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
   
+  
   def index
     # @tasks=Task.all
     
@@ -9,8 +10,8 @@ class TasksController < ApplicationController
   def show
     @users=User.all
     @categories=Category.all
-    @task=Task.find(params[:id])
     @assignee=User.find(@task.user_id).name
+    @task=Task.find_by_url(params[:id])
   end
   
   def new
@@ -32,7 +33,7 @@ class TasksController < ApplicationController
   def edit
     @user=User.find(session[:user_id])
     @categories=Category.all
-    @task=Task.find(params[:id])
+    @task=Task.find_by_url(params[:id])
   end
   
   def update
@@ -50,6 +51,13 @@ class TasksController < ApplicationController
     @task.destroy
     
     redirect_to tasks_path
+  end
+  
+  def sort
+    params[:task].each_with_index do |id, index|
+      Task.update_all(['position=?', index+1], ['id=?', id])
+    end
+    render :nothing => true
   end
   
 end
