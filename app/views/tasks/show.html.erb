@@ -1,7 +1,11 @@
-<body id="index_body">
-	<div id ="t_index">
-	<h1 id ="s_title">Details page for <%= @task.title %></h1>
-	<hr>
+<h1 id ="s_title"><%= @task.title %></h1>
+<hr>
+
+<% if @task.category %>
+  <p id="s_content">Category: <%= @task.category.name %></p>
+<% else %>
+  <p id="s_content">Category: None</p>
+<% end %>
 
   <%= link_to("Choose a task category: ", new_category_path) %><br />
   
@@ -17,14 +21,11 @@
   
 <p id="s_content">Description: <%= @task.description %></p>
 
-<p id="s_status">Done Status: <%= @task.done %></p>
+<% if @task.done %>
+<p id="s_status">This task has been completed.</p>
+<% end %>
 
 	<ul id ="s_links">
 	<li><%= link_to("Edit Task", edit_task_path(@task.url)) %></li>
-
-	<li><%= link_to("Delete Task", task_path(@task.id), :method => "delete") %></li>
-
-	<li><%= link_to("All Tasks", tasks_path) %></li>
-	</ul>
-</div>
-</body>
+	<li><%= link_to("Delete Task", task_path(@task.url), :method => "delete") %></li>
+</ul>

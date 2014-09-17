@@ -10,8 +10,8 @@ class TasksController < ApplicationController
   def show
     @users=User.all
     @categories=Category.all
-    @assignee=User.find(@task.user_id).name
     @task=Task.find_by_url(params[:id])
+    @assignee=User.find(@task.user_id).name
   end
   
   def new
