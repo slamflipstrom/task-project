@@ -3,7 +3,11 @@
 	<h1 id ="s_title">Details page for <%= @task.title %></h1>
 	<hr>
   
-  <%= link_to("Choose a task category: ", new_category_path) %>
+  <%= link_to("Choose a task category: ", new_category_path) %><br />
+  
+  <% if @task.user_id %>
+    
+    <%= current_user.name %>
   
   <%= form_for @task do |f| %>
     
@@ -13,6 +17,8 @@
     
     <%= f.submit "Assign"%>
     
+  <% end %>
+  
   <% end %>
   
 <p id="s_content">Description: <%= @task.description %></p>
