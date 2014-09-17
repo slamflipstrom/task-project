@@ -33,12 +33,22 @@
 
 <% end %>
 
-<% if @comments %>
-<p>Name: <%= @comment.name %></p>
-<p>Comment: <%= @comment.body %></p>
-<% else %>
-<p>Comments: None</p>
+<h1>Comments:</h1>
+
+<% @task.comments.each do |c| %>
+
+  <p>
+    Name: <%= c.name %>
+  </p>
+  <p>
+    Comment: <%= c.body %>
+  </p>
+  
+  <p><%= link_to("Delete Comment", comment_path(c.id), :method => "delete") %></p>
+  
 <% end %>
+
+
 
 
 	<ul id ="s_links">
