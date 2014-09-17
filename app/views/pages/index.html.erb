@@ -1,6 +1,6 @@
 <h1>TaskMate</h1>
 
-<ul id="tasks" class="ui-sortable" data-update-url="<%= sort_tasks_url %>">
+<ul id="sortable" class="ui-sortable" data-update-url="<%= sort_tasks_url %>">
 <% @tasks.each do |faq| %>
   <%= content_tag_for :li, faq do %>
     <span class="handle">[drag]</span>

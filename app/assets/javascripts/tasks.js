@@ -3,7 +3,7 @@
 
 $(document).ready(function() {
   
-  $('#tasks').sortable(
+  $('#sortable').sortable(
     {
       axis: 'y',
       handle: '.handle',
