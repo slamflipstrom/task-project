@@ -1,8 +1,12 @@
-TaskProject::Application.routes.draw do  
+TaskProject::Application.routes.draw do
   
   root :to => 'pages#index'
   
-  resources :tasks
+  resources :tasks do
+      post :sort, on: :collection
+  end
+  
+  post 'tasks/sort' => 'tasks#sort', :as => 'sort_tasks'
   
   resources :categories
   

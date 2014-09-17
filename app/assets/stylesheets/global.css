@@ -12,3 +12,6 @@
   color: red;
 }
 
+.handle {
+  cursor: move;
+}

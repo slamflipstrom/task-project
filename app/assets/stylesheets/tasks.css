@@ -145,9 +145,6 @@ ul#s_links{
 /*show page*/
 
 
-
-
-
-
-
-
+.handle {
+  cursor: move;
+}
