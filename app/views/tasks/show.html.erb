@@ -2,23 +2,17 @@
 	<div id ="t_index">
 	<h1 id ="s_title">Details page for <%= @task.title %></h1>
 	<hr>
-  
+
   <%= link_to("Choose a task category: ", new_category_path) %><br />
   
-  <% if @task.user_id %>
-    
-    <%= current_user.name %>
+  <p id="s_content">This task is currently assigned to <%= @assignee %></p>
   
   <%= form_for @task do |f| %>
     
-    <%= f.label :user %>
-    
     <%= f.collection_select(:user_id, @users, :id, :name, :include_blank => "Please select an assignee") %>
     
-    <%= f.submit "Assign"%>
+    <%= f.submit "Assign Task"%>
     
-  <% end %>
-  
   <% end %>
   
 <p id="s_content">Description: <%= @task.description %></p>

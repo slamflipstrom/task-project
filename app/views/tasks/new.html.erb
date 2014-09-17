@@ -20,13 +20,23 @@
     <%= f.hidden_field :user_id, :value => session[:user_id] %>
   </p>
   
-  <% @user.categories.each do |c| %>
+  <% if @user.categories.length > 0 %>
   
-    <%= f.radio_button :category_id, c.id %>
-    <%= f.label :category_id, c.name %><br />
+    <p>Choose a Category: </p>
+    <% @user.categories.each do |c| %>
+
+      <%= f.radio_button :category_id, c.id %>
+      <%= f.label :category_id, c.name %><br />
+  
+    <% end %>
     
   <% end %>
-
+  
+  <br />
+  
+  <p><%= link_to("Create a category", new_category_path) %></p>
+  
+<br />
   <%= f.submit %>
 
 <% end %>
