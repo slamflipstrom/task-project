@@ -30,7 +30,7 @@ class CategoriesController < ApplicationController
     @category=Category.find(params[:id])
     
     if @category.update_attributes(params[:category])
-      redirect_to category_path(@category.id)
+      redirect_to category_path(@category.url)
     else
       render "edit"
     end

@@ -1,25 +1,19 @@
-
-<body id  ="t_body">
-	<header id="login_header">
-		
-	</header>
-
-<div id = "form">
-	<h5>TaskMate</h5>
-	<%= form_tag create_login_path do %>
-  <div class="field">
-   
-    <%= text_field_tag :email, params[:email], :placeholder => "Email" %>
-  </div>
+<div id="login_form">
+<%= form_tag create_login_path do %>
   
-  <div class="field">
-    
-    <%= password_field_tag :password, params[:password], :placeholder =>"Password" %>
-  </div>
-  
+  <p>
+  <%= label_tag :email %>
+  <%= text_field_tag :email, params[:email] %>
+  </p>
+
+  <p>
+  <%= label_tag :password %>
+  <%= password_field_tag :password, params[:password] %>
+  </p>
+
   <%= submit_tag "Login", :id => "submit" %>
 <% end %>
+</div>
 
 <p id="n_user">Are you a new user?</p>
 <%=link_to("Create a new account", signup_path) %>
-</div></body>

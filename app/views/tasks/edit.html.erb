@@ -1,27 +1,20 @@
-<body class="task_body"><div class="task"><h1>Edit Task</h1>
+<h1>Edit Task</h1>
 
 <%= form_for @task do |f| %>
 
-  <p>
-    <%= f.label :title %> </p>
+    <%= f.label :title %>
     <%= f.text_field :title %>
  
-  <p>
-    <%= f.label :description %> </p>
+    <%= f.label :description %>
     <%= f.text_area :description %>
  
-  <p>
     <%= f.hidden_field :done, :value => "false" %>
     <%= f.hidden_field :user_id, :value => session[:user_id] %>
-  </p>
   
   <% @user.categories.each do |c| %>
-  
     <%= f.radio_button :category_id, c.id %>
     <%= f.label :category_id, c.name %><br />
-    
   <% end %>
 
   <%= f.submit %>
-
-<% end %></div></body>
+<% end %>

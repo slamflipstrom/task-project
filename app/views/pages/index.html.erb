@@ -1,6 +1,8 @@
-<h1>TaskMate</h1>
-
- <% if current_user %>
- <%= link_to "View Tasks", tasks_path %>
- <%= link_to "View Projects", projects_path %>
- <% end %>
+<ul id="sortable" class="ui-sortable" data-update-url="<%= sort_tasks_url %>">
+<% @tasks.each do |task| %>
+  <%= content_tag_for :li, task do %>
+    <span class="handle"> </span>
+    <%= link_to h(task.title), task %>
+  <% end %>
+<% end %>
+</ul>
