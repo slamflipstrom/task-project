@@ -22,6 +22,9 @@
     <%= f.label :body %>
     <%= f.text_area :body %>
   </p>
+  <p>
+  <%= f.hidden_field :task_id, value: @task.id %>
+  </p>
 
   <%= f.submit %>
 

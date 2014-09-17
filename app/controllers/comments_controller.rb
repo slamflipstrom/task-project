@@ -18,7 +18,7 @@ class CommentsController < ApplicationController
       @comment=Comment.new(params[:comment])
     
       if @comment.save
-        redirect_to task_path(params[:task_id])
+        redirect_to task_path(@comment.task_id)
       else
         render 'tasks#new'
       end
