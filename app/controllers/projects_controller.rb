@@ -13,8 +13,6 @@ class ProjectsController < ApplicationController
   
   def new
     @project=Project.new
-    #TODO: Check on this view file
-    # @categories=Category.all
   end
   
   def create
