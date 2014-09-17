@@ -17,10 +17,11 @@ class CommentsController < ApplicationController
   def create
       @comment=Comment.new(params[:comment])
     
+      binding.pry
       if @comment.save
         u=User.find(session[:user_id])
         u.comments << @comment
-        redirect_to task_path(@comment.task_id)
+        redirect_to task_path(@comment.task.url)
       else
         render 'tasks#new'
       end
@@ -39,7 +40,7 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     @comment.destroy
     
-    redirect_to task_path(@comment.task_id)
+    redirect_to task_path(@comment.task.url)
   end
   
 end
