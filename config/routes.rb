@@ -2,6 +2,8 @@ TaskProject::Application.routes.draw do
   
   root :to => 'pages#index'
   
+  resources :comments
+  
   resources :tasks do
       post :sort, on: :collection
   end
