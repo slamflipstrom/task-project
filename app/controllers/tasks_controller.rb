@@ -8,7 +8,7 @@ class TasksController < ApplicationController
   end
   
   def show
-    binding.pry
+ 
   @task=Task.find_by_url(params[:id])
   
   end
@@ -32,7 +32,7 @@ class TasksController < ApplicationController
   def edit
     @user=User.find(session[:user_id])
     @categories=Category.all
-    @task=Task.find(params[:id])
+    @task=Task.find_by_url(params[:id])
   end
   
   def update
