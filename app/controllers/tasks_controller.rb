@@ -10,7 +10,7 @@ class TasksController < ApplicationController
     @task=Task.find(params[:id])
     @comment=Comment.new
     # @comments=Comment.find(params[:id])
-    @current_user=User.find(session[:user_id])
+    @user=User.find(session[:user_id])
   end
   
   def new

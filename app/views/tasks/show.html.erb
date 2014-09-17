@@ -16,7 +16,7 @@
 <%= form_for @comment do |f| %>
 
   <p>
-    <%= f.hidden_field :name, value: @current_user.name %>
+    <%= f.hidden_field :name, value: @user.name %>
   </p>
   <p>
     <%= f.label :body %>
@@ -25,9 +25,19 @@
   <p>
   <%= f.hidden_field :task_id, value: @task.id %>
   </p>
+  <p>
+  <%= f.hidden_field :user_id, value: @user.id %>
+  </p>
 
   <%= f.submit %>
 
+<% end %>
+
+<% if @comments %>
+<p>Name: <%= @comment.name %></p>
+<p>Comment: <%= @comment.body %></p>
+<% else %>
+<p>Comments: None</p>
 <% end %>
 
 
