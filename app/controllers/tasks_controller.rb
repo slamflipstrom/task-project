@@ -8,6 +8,9 @@ class TasksController < ApplicationController
   
   def show
     @task=Task.find(params[:id])
+    @comment=Comment.new
+    # @comments=Comment.find(params[:id])
+    @current_user=User.find(session[:user_id])
   end
   
   def new
@@ -18,6 +21,7 @@ class TasksController < ApplicationController
   
   def create
     @task=Task.new(params[:task])
+    @comment=Comment.new(params[:comment])
     
     if @task.save
       redirect_to tasks_path
