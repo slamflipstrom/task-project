@@ -1,5 +1,5 @@
-class Task < ActiveRecord::Base  
-  attr_accessible :description, :done, :title, :user_id, :category_id
+class Task < ActiveRecord::Base
+  attr_accessible :description, :done, :title, :user_id, :category_id, :project_id
   belongs_to :category
   belongs_to :project
   has_many :comments
@@ -9,14 +9,7 @@ class Task < ActiveRecord::Base
   acts_as_url :title
   
   validates :title, :presence => true
-  
-  
-  
-  
-
- 
-  
-  
+    
   def to_param
     url
   end

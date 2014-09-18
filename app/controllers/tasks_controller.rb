@@ -17,6 +17,13 @@ class TasksController < ApplicationController
   end
   
   def new
+    if params.include?(:project_id)
+      @project=Project.find(params[:project_id])
+      @p_id=@project.id
+    else
+      @p_id=nil
+    end
+    
     @user=User.find(session[:user_id])
     @task=Task.new
     @categories=Category.all
@@ -29,7 +36,12 @@ class TasksController < ApplicationController
     if @task.save
       feed = Feed.new({atype: "task", user_id: session[:user_id], key: 'feeds/task/create'})
       feed.save
-      redirect_to tasks_path
+      
+      if @task.project_id == nil
+        redirect_to tasks_path
+      else
+        redirect_to project_path(@task.project_id)
+      end
     else
       render "new"
     end

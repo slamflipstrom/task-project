@@ -13,6 +13,7 @@
 
 ActiveRecord::Schema.define(:version => 20140918190924) do
 
+
   create_table "activities", :force => true do |t|
     t.integer  "trackable_id"
     t.string   "trackable_type"
@@ -79,6 +80,7 @@ ActiveRecord::Schema.define(:version => 20140918190924) do
     t.integer  "category_id"
     t.integer  "position"
     t.text     "url"
+    t.integer  "project_id"
   end
 
   create_table "users", :force => true do |t|
