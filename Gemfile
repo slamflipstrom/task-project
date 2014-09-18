@@ -8,7 +8,6 @@ gem 'rails', '3.2.19'
 gem 'pg'
 gem 'pony'
 gem 'acts_as_list'
-gem 'public_activity'
 
 # Gems used only for assets and not required
 # in production environments by default.
