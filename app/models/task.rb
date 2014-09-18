@@ -1,4 +1,6 @@
 class Task < ActiveRecord::Base
+  include PublicActivity::Common
+  
   attr_accessible :description, :done, :title, :user_id, :category_id
   belongs_to :category
   belongs_to :project

@@ -1,4 +1,6 @@
 class Comment < ActiveRecord::Base
+  include PublicActivity::Common
+  
   attr_accessible :body, :name, :task_id, :user_id
   belongs_to :task
   belongs_to :user
