@@ -39,13 +39,10 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = Comment.find(params[:id])
-    @comment.destroy
-<<<<<<< HEAD
-    
-=======
     @comment.create_activity :destroy, owner: current_user
+    @comment.destroy
+    
 
->>>>>>> origin
     redirect_to task_path(@comment.task.url)
   end
 
