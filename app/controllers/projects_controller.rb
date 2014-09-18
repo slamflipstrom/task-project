@@ -17,6 +17,7 @@ class ProjectsController < ApplicationController
     @project=Project.new(params[:project])
     
     if @project.save
+      @project.create_activity :create, owner: current_user
       u=User.find(session[:user_id])
       u.projects << @project
       redirect_to projects_path
@@ -33,6 +34,7 @@ class ProjectsController < ApplicationController
     @project=Project.find(params[:id])
     
     if @project.update_attributes(params[:project])
+      @project.create_activity :update, owner: current_user
       redirect_to project_path(@project.id)
     else
       render "edit"
@@ -42,6 +44,7 @@ class ProjectsController < ApplicationController
   def destroy
     @project = Project.find(params[:id])
     @project.destroy
+    @project.create_activity :destroy, owner: current_user
     
     redirect_to projects_path
   end
