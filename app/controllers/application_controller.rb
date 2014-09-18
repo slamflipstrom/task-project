@@ -1,6 +1,4 @@
-class ApplicationController < ActionController::Base
-  include PublicActivity::StoreController
-  
+class ApplicationController < ActionController::Base  
   protect_from_forgery
   helper_method :current_user
   hide_action :current_user
