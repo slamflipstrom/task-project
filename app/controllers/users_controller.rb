@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     
     if @user.save
+      @user.create_activity :create, owner: current_user
       session[:user_id] = @user.id
       redirect_to root_path
     else

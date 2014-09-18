@@ -27,6 +27,7 @@ class TasksController < ApplicationController
     @comment=Comment.new(params[:comment])
     
     if @task.save
+      @task.create_activity :create, owner: current_user
       redirect_to tasks_path
     else
       render "new"
@@ -43,6 +44,7 @@ class TasksController < ApplicationController
     @task=Task.find_by_url(params[:id])
     
     if @task.update_attributes(params[:task])
+      @task.create_activity :update, owner: current_user
       redirect_to task_path(@task.url)
     else
       render "edit"
@@ -82,6 +84,7 @@ class TasksController < ApplicationController
   def destroy
     @task = Task.find(params[:id])
     @task.destroy
+    @task.create_activity :destroy, owner: current_user
     
     redirect_to tasks_path
   end

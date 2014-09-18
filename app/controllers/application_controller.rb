@@ -1,6 +1,9 @@
 class ApplicationController < ActionController::Base
+  include PublicActivity::StoreController
+  
   protect_from_forgery
   helper_method :current_user
+  hide_action :current_user
   before_filter :authorize
   
   def current_user
