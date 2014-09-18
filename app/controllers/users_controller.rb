@@ -9,7 +9,8 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     
     if @user.save
-      @user.create_activity :create, owner: current_user
+      feed = Feed.new({atype: "user", user_id: session[:user_id], key: 'feeds/user/create'})
+      feed.save
       session[:user_id] = @user.id
       redirect_to root_path
     else

@@ -27,7 +27,8 @@ class TasksController < ApplicationController
     @comment=Comment.new(params[:comment])
     
     if @task.save
-      @task.create_activity :create, owner: current_user
+      feed = Feed.new({atype: "task", user_id: session[:user_id], key: 'feeds/task/create'})
+      feed.save
       redirect_to tasks_path
     else
       render "new"
@@ -44,7 +45,8 @@ class TasksController < ApplicationController
     @task=Task.find_by_url(params[:id])
     
     if @task.update_attributes(params[:task])
-      @task.create_activity :update, owner: current_user
+      feed = Feed.new({atype: "project", user_id: session[:user_id], key: 'feeds/project/update', task_id: @task.id})
+      feed.save
       redirect_to task_path(@task.url)
     else
       render "edit"
@@ -83,8 +85,9 @@ class TasksController < ApplicationController
   
   def destroy
     @task = Task.find(params[:id])
+    feed = Feed.new({atype: "project", user_id: session[:user_id], key: 'feeds/project/destroy'})
+    feed.save
     @task.destroy
-    @task.create_activity :destroy, owner: current_user
     
     redirect_to tasks_path
   end

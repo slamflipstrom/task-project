@@ -1,0 +1,7 @@
+<h1>Activity Feed</h1>
+
+<% @feeds.each do |f| %>
+  <% if f.key %>
+    <p><%= render f.key, :f => f %></p>
+  <% end %>
+<% end %>
