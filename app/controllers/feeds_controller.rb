@@ -1,6 +1,6 @@
 class FeedsController < ApplicationController
   def index
-    @feeds = Feed.all
+    @feeds = Feed.last(15).reverse
     
   end
 end

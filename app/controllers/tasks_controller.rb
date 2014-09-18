@@ -45,7 +45,7 @@ class TasksController < ApplicationController
     @task=Task.find_by_url(params[:id])
     
     if @task.update_attributes(params[:task])
-      feed = Feed.new({atype: "project", user_id: session[:user_id], key: 'feeds/project/update', task_id: @task.id})
+      feed = Feed.new({atype: "task", user_id: session[:user_id], key: 'feeds/task/update', task_id: @task.id})
       feed.save
       redirect_to task_path(@task.url)
     else
@@ -84,8 +84,8 @@ class TasksController < ApplicationController
   end
   
   def destroy
-    @task = Task.find(params[:id])
-    feed = Feed.new({atype: "project", user_id: session[:user_id], key: 'feeds/project/destroy'})
+    @task = Task.find_by_url(params[:id])
+    feed = Feed.new({atype: "task", user_id: session[:user_id], key: 'feeds/task/destroy'})
     feed.save
     @task.destroy
     

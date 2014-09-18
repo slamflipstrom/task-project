@@ -1,7 +1,7 @@
 <%= f.user.name %> added a new task, 
 
 <% if f.task %>
-<%= link_to f.task.title, "tasks/#{f.task.url}" %>.
+  <%= link_to f.task.title, task_path(f.task.url) %>.
 <% else %>
-which has since been deleted.
+  which has since been deleted.
 <% end %>
