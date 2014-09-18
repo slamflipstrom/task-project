@@ -17,7 +17,6 @@ class TasksController < ApplicationController
   end
   
   def new
-    binding.pry
     if params.include?(:project_id)
       @project=Project.find(params[:project_id])
       @p_id=@project.id
@@ -36,7 +35,12 @@ class TasksController < ApplicationController
     
     if @task.save
       @task.create_activity :create, owner: current_user
-      redirect_to tasks_path
+      if @task.project_id == nil
+        redirect_to tasks_path
+      else
+        redirect_to project_path(@task.project_id)
+      end
+      
     else
       render "new"
     end
