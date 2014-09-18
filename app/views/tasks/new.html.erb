@@ -14,6 +14,7 @@
   <p>
     <%= f.hidden_field :done, :value => "false" %>
     <%= f.hidden_field :user_id, :value => session[:user_id] %>
+    <%= f.hidden_field :project_id, :value => @p_id %>
   </p>
   
   <% if @user.categories.length > 0 %>

@@ -2,6 +2,8 @@
 
 <p>Description: <%= @project.description %></p>
 
+<p><%= link_to("Create a Task", new_task_path(:project_id => @project.id)) %>
+
 <p><%= link_to("Edit Project", edit_project_path(@project.id)) %></p>
 
 <p><%= link_to("Delete Project", project_path(@project.id), :method => "delete") %></p>

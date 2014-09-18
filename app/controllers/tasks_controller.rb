@@ -17,6 +17,14 @@ class TasksController < ApplicationController
   end
   
   def new
+    binding.pry
+    if params.include?(:project_id)
+      @project=Project.find(params[:project_id])
+      @p_id=@project.id
+    else
+      @p_id=nil
+    end
+    
     @user=User.find(session[:user_id])
     @task=Task.new
     @categories=Category.all
