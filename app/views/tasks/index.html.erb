@@ -1,11 +1,16 @@
 <h1 id="t_title">All Tasks</h1>
 <hr>
 
-<% @tasks.each do |t| %>
+<% if current_user %>
 
-  <p><%= link_to(t.title, task_path(t.url), :id=>"t_name") %></p>
-  <p id="t_content"> <%= t.description %></p>
-
+<ul id="sortable" class="ui-sortable" data-update-url="<%= sort_tasks_url %>">
+<% @tasks.each do |task| %>
+  <%= content_tag_for :li, task do %>
+    <span class="handle"> </span>
+    <%= link_to h(task.title), task %>
+  <% end %>
+<% end %>
+</ul>
 <% end %>
 
 <%= link_to("New Task", new_task_path, :id=>"n_new") %>

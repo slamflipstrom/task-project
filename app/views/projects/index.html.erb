@@ -1,20 +1,26 @@
-<h1>Your Projects</h1>
+<h1 id="t_title">All Projects</h1>
+<hr>
 
-<% @projects.each do |p| %>
+<% if current_user %>
 
-  <h4><%= link_to(p.name, project_path(p.id)) %></h4>
-  <p>Description: <%= p.description %></p>
-  
-  <% if p.tasks.length > 0 %>
-  
-    <% p.tasks.each do |t| %>
-
-      <%= link_to(t.title, task_path(t.url)) %>
-
+<ul id="sortable_project" class="ui-sortable" data-update-url="<%= sort_projects_url %>">
+<% @projects.each do |project| %>
+  <%= content_tag_for :li, project do %>
+    <span class="handle"> </span>
+    <%= link_to h(project.name), project %>
+    
+    <ul id="sortable" class="sortable ui-sortable" data-update-url="<%= sort_tasks_url %>">
+    <% project.tasks.each do |task| %>
+      <%= content_tag_for :li, task do %>
+        <span class="handle"> </span>
+        <%= link_to h(task.title), task, class: "pro_tasks" %>
+      <% end %>
     <% end %>
-  
+  </ul>
+    
   <% end %>
-
+<% end %>
+</ul>
 <% end %>
 
-<h3><%= link_to("New Project", new_project_path) %></h3>
+<%= link_to("New Project", new_project_path, :id => "n_new") %>

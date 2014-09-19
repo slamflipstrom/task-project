@@ -9,9 +9,9 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     
     if @user.save
-      feed = Feed.new({atype: "user", user_id: session[:user_id], key: 'feeds/user/create'})
-      feed.save
       session[:user_id] = @user.id
+      feed = Feed.new({atype: "user", user_id: @user.id, key: 'feeds/user/create'})
+      feed.save
       redirect_to root_path
     else
       raise "User could not be saved."

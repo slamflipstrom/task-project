@@ -1,12 +1,1 @@
 
-<% if current_user %>
-
-<ul id="sortable" class="ui-sortable" data-update-url="<%= sort_tasks_url %>">
-<% @tasks.each do |task| %>
-  <%= content_tag_for :li, task do %>
-    <span class="handle"> </span>
-    <%= link_to h(task.title), task %>
-  <% end %>
-<% end %>
-</ul>
-<% end %>

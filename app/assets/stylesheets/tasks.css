@@ -14,15 +14,17 @@ hr{
 }
 
 
-.task {
+.task, .project {
 	
 	margin:  0px auto;
 	width:300px;
 	padding: 40px 84px;
 	border-radius: 15px;
-	
 	background-color: #717051;
-	
+}
+
+.project {
+  border-radius: 15px;
 }
 
 
@@ -85,23 +87,31 @@ hr{
   margin-left: 20px;
 }
 
-#t_name{
+#t_name {
 	display: inline-block;
 	text-decoration: none;
 	border-bottom: 2px solid #883116;
 	font-size: 20px;
 }
 
-#n_new{
+#n_new {
+  position: absolute;
+  top: 70px;
+  right: 15px;
 	display:inline-block;
 	text-decoration: none;
-	background-color: #883116;
 	padding: 10px;
 	margin-bottom: 31px;
 	color: #F7E8A7;
 }
+
+a#n_new {
+  color: #392B1D;
+}
+
 #n_new:hover{
-	background-color: #EB5627;
+  color: #FFFFFF;
+  text-shadow: 0 0 5px #000000;
 	
 }
 ul#s_links li {
@@ -113,7 +123,7 @@ ul#s_links li {
 	padding:10px;
 	
 }
-ul#s_links{
+ul#s_links {
 /*  margin-top: -24px;*/
 }
 #s_links li a {
