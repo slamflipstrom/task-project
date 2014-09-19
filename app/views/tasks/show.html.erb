@@ -12,7 +12,7 @@
   <p id="s_content">This task is currently assigned to <%= @assignee.name %></p>
 
   <%= form_for @task, url: assign_task_path, method: :post do |f| %>
-    <%= f.hidden_field :task_id, value: @task.url %>
+    <%= f.hidden_field :task_id, value: @task.id %>
     <%= f.hidden_field :email, value: @assignee.email  %>
     <%= f.collection_select(:user_id, @users, :id, :name, :include_blank => "Please select an assignee") %>
     <%= f.submit "Assign Task" %>

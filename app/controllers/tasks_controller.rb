@@ -1,6 +1,5 @@
 class TasksController < ApplicationController
-  
-  
+   
   def index
     # @tasks=Task.all
     
@@ -65,7 +64,7 @@ class TasksController < ApplicationController
   end
   
   def assign
-    @task=Task.find_by_url(params[:task][:task_id])
+    @task=Task.find_by_id(params[:task][:task_id])
     @user = User.find(session[:user_id])
     
     user_id = params[:task][:user_id].to_i
