@@ -9,7 +9,6 @@ class TasksController < ApplicationController
   
   def show
     @comment=Comment.new
-    @user=User.find(session[:user_id])
     @users=User.all
     @categories=Category.all
     @task=Task.find_by_url(params[:id])

@@ -7,65 +7,39 @@
   <p id="s_content">Category: None</p>
 <% end %>
 
-  <%= link_to("Choose a task category: ", new_category_path) %><br />
-  
+<%= link_to("Choose a task category: ", new_category_path) %><br />
+
   <p id="s_content">This task is currently assigned to <%= @assignee.name %></p>
-  
+
   <%= form_for @task, url: assign_task_path, method: :post do |f| %>
-    
     <%= f.hidden_field :task_id, value: @task.url %>
     <%= f.hidden_field :email, value: @assignee.email  %>
     <%= f.collection_select(:user_id, @users, :id, :name, :include_blank => "Please select an assignee") %>
-    
     <%= f.submit "Assign Task" %>
-    
   <% end %>
   
 <p id="s_content">Description: <%= @task.description %></p>
 
 <% if @task.done %>
-<p id="s_status">This task has been completed.</p>
+  <p id="s_status">This task has been completed.</p>
 <% end %>
 
 <%= form_for @comment do |f| %>
-
-  <p>
-    <%= f.hidden_field :name, value: @user.name %>
-  </p>
-  <p>
-    <%= f.label :body %>
-    <%= f.text_area :body %>
-  </p>
-  <p>
-  <%= f.hidden_field :task_id, value: @task.id %>
-  </p>
-  <p>
-  <%= f.hidden_field :user_id, value: @user.id %>
-  </p>
-
+  <p><%= f.label :body %> <%= f.text_area :body %></p>
+     <%= f.hidden_field :task_id, value: @task.id %>
+     <%= f.hidden_field :user_id, value: session[:user_id] %>
   <%= f.submit %>
-
 <% end %>
 
 <h1>Comments:</h1>
 
 <% @task.comments.each do |c| %>
-
-  <p>
-    Name: <%= c.name %>
-  </p>
-  <p>
-    Comment: <%= c.body %>
-  </p>
-  
+  <p>Name: <%= c.user.name %></p>
+  <p>Comment: <%= c.body %></p>
   <p><%= link_to("Delete Comment", comment_path(c.id), :method => "delete") %></p>
-  
 <% end %>
 
-
-
-
-	<ul id ="s_links">
+<ul id ="s_links">
 	<li><%= link_to("Edit Task", edit_task_path(@task.url)) %></li>
 	<li><%= link_to("Delete Task", task_path(@task.url), :method => "delete") %></li>
 </ul>
