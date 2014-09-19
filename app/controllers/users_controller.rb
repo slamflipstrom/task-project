@@ -14,7 +14,7 @@ class UsersController < ApplicationController
       feed.save
       redirect_to root_path
     else
-      raise "User could not be saved."
+      render 'new'
     end
     
   end
