@@ -16,9 +16,10 @@ class CommentsController < ApplicationController
 
   def create
     @comment=Comment.new(params[:comment])
-
+    
     if @comment.save
-      @comment.create_activity :create, owner: current_user
+      feed = Feed.new({atype: "comment", user_id: session[:user_id], key: 'feeds/comment/create', comment_id: @comment.id, task_id: @comment.task.id})
+      feed.save
       u=User.find(session[:user_id])
       u.comments << @comment
       redirect_to task_path(@comment.task.url)
@@ -38,7 +39,8 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = Comment.find(params[:id])
-    @comment.create_activity :destroy, owner: current_user
+    feed = Feed.new({atype: "comment", user_id: session[:user_id], key: 'feeds/comment/destroy', comment_id: @comment.id, task_id: @comment.task.id})
+    feed.save
     @comment.destroy
 
     redirect_to task_path(@comment.task.url)

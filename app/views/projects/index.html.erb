@@ -4,6 +4,16 @@
 
   <h4><%= link_to(p.name, project_path(p.id)) %></h4>
   <p>Description: <%= p.description %></p>
+  
+  <% if p.tasks.length > 0 %>
+  
+    <% p.tasks.each do |t| %>
+
+      <%= link_to(t.title, task_path(t.url)) %>
+
+    <% end %>
+  
+  <% end %>
 
 <% end %>
 

@@ -17,6 +17,13 @@ class TasksController < ApplicationController
   end
   
   def new
+    if params.include?(:project_id)
+      @project=Project.find(params[:project_id])
+      @p_id=@project.id
+    else
+      @p_id=nil
+    end
+    
     @user=User.find(session[:user_id])
     @task=Task.new
     @categories=Category.all
@@ -27,8 +34,14 @@ class TasksController < ApplicationController
     @comment=Comment.new(params[:comment])
     
     if @task.save
-      @task.create_activity :create, owner: current_user
-      redirect_to tasks_path
+      feed = Feed.new({atype: "task", user_id: session[:user_id], key: 'feeds/task/create'})
+      feed.save
+      
+      if @task.project_id == nil
+        redirect_to tasks_path
+      else
+        redirect_to project_path(@task.project_id)
+      end
     else
       render "new"
     end
@@ -44,7 +57,8 @@ class TasksController < ApplicationController
     @task=Task.find_by_url(params[:id])
     
     if @task.update_attributes(params[:task])
-      @task.create_activity :update, owner: current_user
+      feed = Feed.new({atype: "task", user_id: session[:user_id], key: 'feeds/task/update', task_id: @task.id})
+      feed.save
       redirect_to task_path(@task.url)
     else
       render "edit"
@@ -82,8 +96,9 @@ class TasksController < ApplicationController
   end
   
   def destroy
-    @task = Task.find(params[:id])
-    @task.create_activity :destroy, owner: current_user
+    @task = Task.find_by_url(params[:id])
+    feed = Feed.new({atype: "task", user_id: session[:user_id], key: 'feeds/task/destroy'})
+    feed.save
     @task.destroy
     
     redirect_to tasks_path

@@ -2,8 +2,18 @@
 
 <p>Description: <%= @project.description %></p>
 
-<p><%= link_to("Edit Project", edit_project_path(@project.id)) %></p>
+<% @project.tasks.each do |t| %>
 
-<p><%= link_to("Delete Project", project_path(@project.id), :method => "delete") %></p>
+  <%= link_to(t.title, task_path(t.url)) %>
 
-<p><%= link_to("All Projects", projects_path) %></p>
+<% end %>
+
+<br />
+
+<%= link_to("Create a Task", new_task_path(:project_id => @project.id)) %>
+
+<%= link_to("Edit Project", edit_project_path(@project.id)) %>
+
+<%= link_to("Delete Project", project_path(@project.id), :method => "delete") %>
+
+<%= link_to("All Projects", projects_path) %>
