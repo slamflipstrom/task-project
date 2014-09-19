@@ -109,12 +109,17 @@ header {
   top: 0;
 }
 
-#sortable {
+#sortable, #sortable_project {
   padding: 30px 0 0 0;
   margin: 0 auto;
 }
 
-#sortable li {
+#sortable_project .task {
+  width: 400px;
+  margin-left: 10px;
+}
+
+#sortable li, #sortable_project li {
   list-style: none;
   width: 450px;
   padding: 10px;
@@ -122,13 +127,23 @@ header {
   background: #DED196;
 }
 
-#sortable a {
-  text-decoration: none;
-  text-transform: uppercase;
-  color: ;
+#sortable_project .project {
+  background: #D1C58D;
+  padding-bottom: 15px;
 }
 
-#sortable .handle {
+#sortable a, #sortable_project a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: black;
+}
+
+#sortable a:hover, #sortable_project a:hover {
+  color: white;
+  text-shadow: 0 0 5px #000000;
+}
+
+#sortable .handle, #sortable_project .handle {
   position: relative;
   top: -5px;
   left: -5px;

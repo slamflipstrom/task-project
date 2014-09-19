@@ -3,7 +3,9 @@
 
 $(document).ready(function() {
   
-  $('#sortable').sortable(
+
+  
+  $('.sortable').sortable(
     {
       axis: 'y',
       handle: '.handle',
@@ -11,6 +13,15 @@ $(document).ready(function() {
         return $.post($(this).data('update-url'), $(this).sortable('serialize'));
       }
     });
+    
+    $('#sortable_project').sortable(
+      {
+        axis: 'y',
+        handle: '.handle',
+        update: function() {
+          return $.post($(this).data('update-url'), $(this).sortable('serialize'));
+        }
+      });
   
   
 });

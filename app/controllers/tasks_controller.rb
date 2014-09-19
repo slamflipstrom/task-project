@@ -34,7 +34,7 @@ class TasksController < ApplicationController
     @comment=Comment.new(params[:comment])
     
     if @task.save
-      feed = Feed.new({atype: "task", user_id: session[:user_id], key: 'feeds/task/create'})
+      feed = Feed.new({atype: "task", user_id: session[:user_id], key: 'feeds/task/create', task_id: @task.id})
       feed.save
       
       if @task.project_id == nil

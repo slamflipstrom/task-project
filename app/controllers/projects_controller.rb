@@ -52,4 +52,11 @@ class ProjectsController < ApplicationController
     redirect_to projects_path
   end
   
+  def sort
+    params[:project].each_with_index do |id, index|
+      Project.update_all(['position=?', index+1], ['id=?', id])
+    end
+    render :nothing => true
+  end
+  
 end
