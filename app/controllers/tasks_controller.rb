@@ -1,25 +1,23 @@
 class TasksController < ApplicationController
    
   def index
-    # @tasks=Task.all
-    
     @tasks=Task.where({:user_id => session[:user_id]})
   end
   
   def show
-    @comment=Comment.new
-    @users=User.all
-    @categories=Category.all
-    @task=Task.find_by_url(params[:id])
-    @assignee=User.find(@task.user_id)
+    @comment = Comment.new
+    @users = User.all
+    @categories = Category.all
+    @task = Task.find_by_url(params[:id])
+    @assignee = User.find(@task.user_id)
   end
   
   def new
     if params.include?(:project_id)
-      @project=Project.find(params[:project_id])
-      @p_id=@project.id
+      @project = Project.find(params[:project_id])
+      @p_id = @project.id
     else
-      @p_id=nil
+      @p_id = nil
     end
     
     @user=User.find(session[:user_id])
@@ -28,8 +26,8 @@ class TasksController < ApplicationController
   end
   
   def create
-    @task=Task.new(params[:task])
-    @comment=Comment.new(params[:comment])
+    @task = Task.new(params[:task])
+    @comment = Comment.new(params[:comment])
     
     if @task.save
       feed = Feed.new({atype: "task", user_id: session[:user_id], key: 'feeds/task/create', task_id: @task.id})
@@ -46,13 +44,13 @@ class TasksController < ApplicationController
   end
   
   def edit
-    @user=User.find(session[:user_id])
-    @categories=Category.all
-    @task=Task.find_by_url(params[:id])
+    @user = User.find(session[:user_id])
+    @categories = Category.all
+    @task = Task.find_by_url(params[:id])
   end
   
   def update
-    @task=Task.find_by_url(params[:id])
+    @task = Task.find_by_url(params[:id])
     
     if @task.update_attributes(params[:task])
       feed = Feed.new({atype: "task", user_id: session[:user_id], key: 'feeds/task/update', task_id: @task.id})
@@ -64,7 +62,7 @@ class TasksController < ApplicationController
   end
   
   def assign
-    @task=Task.find_by_id(params[:task][:task_id])
+    @task = Task.find_by_id(params[:task][:task_id])
     @user = User.find(session[:user_id])
     
     user_id = params[:task][:user_id].to_i
