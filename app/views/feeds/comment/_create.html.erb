@@ -1,0 +1,7 @@
+<%= f.user.name %> added a new comment on 
+
+<% if f.task %>
+<%= link_to f.task.title, task_path(f.task.url) %>
+<% else %>
+a task that has since been deleted.
+<% end %>

@@ -1,8 +1,10 @@
 TaskProject::Application.routes.draw do
 
+  get "feeds/index"
+
   root :to => 'pages#index'
   
-  
+  resources :feeds
   resources :activities
   resources :comments
   

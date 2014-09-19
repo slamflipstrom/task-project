@@ -1,0 +1,7 @@
+<%= f.user.name %> removed a comment from 
+
+<% if f.task %>
+  <%= link_to f.task.title, "tasks/#{f.task.url}" %>
+<% else %>
+  a task which has since been deleted.
+<% end %>

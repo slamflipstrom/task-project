@@ -1,0 +1,7 @@
+<%= f.user.name %> added a new project,
+
+<% if f.project %>
+  <%= link_to f.project.name, project_path(f.project.id) %>.
+<% else %>
+  which has since been removed.
+<% end %>
