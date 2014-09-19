@@ -39,12 +39,8 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = Comment.find(params[:id])
-<<<<<<< HEAD
-    @comment.create_activity :destroy, owner: current_user
-=======
     feed = Feed.new({atype: "comment", user_id: session[:user_id], key: 'feeds/comment/destroy', comment_id: @comment.id, task_id: @comment.task.id})
     feed.save
->>>>>>> master
     @comment.destroy
 
     redirect_to task_path(@comment.task.url)
