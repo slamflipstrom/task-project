@@ -1,5 +1,5 @@
-	<h1>New Task</h1>
-	<hr>
+<h1>New Task</h1>
+<hr>
 
 <%= form_for @task do |f| %>
 
@@ -31,9 +31,18 @@
   
   <br />
   
-  <p><%= link_to("Create a category", new_category_path) %></p>
-  
-<br />
   <%= f.submit %>
 
 <% end %>
+
+<% form_for @category, :url => "/categories/in_task", :method => "post", :action => "create_in_task" do |f| %>
+  
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.hidden_field :user_id, :value => session[:user_id] %>
+  </p>
+  
+  <%= f.submit %>  
+
+<% end %>  

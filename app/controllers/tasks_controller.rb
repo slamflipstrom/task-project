@@ -23,6 +23,7 @@ class TasksController < ApplicationController
     @user=User.find(session[:user_id])
     @task=Task.new
     @categories=Category.all
+    @category=Category.new
   end
   
   def create

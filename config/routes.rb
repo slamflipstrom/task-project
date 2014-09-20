@@ -21,6 +21,7 @@ TaskProject::Application.routes.draw do
   post 'tasks/assign' => 'tasks#assign', :as => 'assign_task'
   
   resources :categories
+  post "/categories/in_task" => 'categories#create_in_task', :as => "create_in_task"
   
   resources :projects
   

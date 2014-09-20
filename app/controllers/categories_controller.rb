@@ -22,6 +22,16 @@ class CategoriesController < ApplicationController
     end
   end
   
+  def create_in_task
+    @category=Category.new(params[:category])
+    
+    if @category.save
+      redirect_to new_task_path
+    else
+      render "edit"
+    end
+  end
+  
   def edit
     @category=Category.find(params[:id])
   end
