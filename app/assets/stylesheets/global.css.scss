@@ -1,3 +1,5 @@
+$bg-color: #392B1D;
+
 html {
   box-sizing: border-box;
   width: 100%;
@@ -14,7 +16,7 @@ html {
 
 body {
   margin: 0;
-  background-color: #392B1D;
+  background-color: $bg-color;
 }
 
 #alert {
@@ -75,7 +77,7 @@ nav li a {
 }
 
 nav li a:hover {
-  background: #392B1D;
+  background: $bg-color;
   color: white;
 }
 
