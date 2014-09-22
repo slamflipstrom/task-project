@@ -35,7 +35,7 @@
 
 <% end %>
 
-<% form_for @category, :url => "/categories/in_task", :method => "post", :action => "create_in_task" do |f| %>
+<%= form_for @category, :url => "/categories/in_task", :method => "post", :action => "create_in_task" do |f| %>
   
   <p>
     <%= f.label :name %>
