@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     
     if @user.save
+      UserMailer.registration_confirmation(@user).deliver
       session[:user_id] = @user.id
       feed = Feed.new({atype: "user", user_id: @user.id, key: 'feeds/user/create'})
       feed.save
