@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default from: => "taskmate.ocs@gmail.com"
+  default :from => "taskmate.ocs@gmail.com"
 
   def registration_confirmation(user)
     @user = user
